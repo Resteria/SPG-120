@@ -49,7 +49,7 @@ class ShimadzuSpectrometer():
         """
         return self.__controller__.getStatus()
 
-    def change_wavelength(self, next_wavelength, next_filter=1, interlock=True):
+    def changeWavelength(self, next_wavelength, next_filter=1, interlock=True):
         if self.__type__ == 'S' or self.__type__ == 'UV':
             if not (0 <= next_wavelength <= 1300):
                 raise ValueError('Wavelength must be between 0 and 1300.')
@@ -111,7 +111,7 @@ class ShimadzuSpectrometer():
         self.__controller__.go()
         return
 
-    def measure_spectrum(self, start, end, pitch, interval, filter=1, interlock=True):
+    def measureSpectrum(self, start, end, pitch, interval, filter=1, interlock=True):
         if not interval >= 1.1:
             raise ValueError('Interval must be 1.1 or more.')
         """
