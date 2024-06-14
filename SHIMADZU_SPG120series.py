@@ -120,13 +120,13 @@ class ShimadzuSpectrometer():
         if not filter in [1, 2, 3, 4, 5, 6]:
             raise ValueError('Filter must be 1, 2, 3, 4, 5 or 6.')
         
-        self.change_wavelength(start, filter, interlock)
+        self.changeWavelength(start, filter, interlock)
         time.sleep(3.0)
         wavelength = start
 
         while wavelength <= end:
             print(wavelength)
-            self.change_wavelength(wavelength, filter, interlock)
+            self.changeWavelength(wavelength, filter, interlock)
             wavelength += pitch
             time.sleep(interval)
     
