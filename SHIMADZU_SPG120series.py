@@ -4,7 +4,7 @@ import time
 """
 Units
 Wavelength:nm
-Angle:degree, pulse {(grating)1 pulse = 0.0018 degree, (next_filter)1 pulse = 0.36 degree}
+Angle:degree, pulse {(grating)1 pulse = 0.0018 degree, (filter)1 pulse = 0.36 degree}
 """
 class ShimadzuSpectrometer():
     def __init__(self, controller):
