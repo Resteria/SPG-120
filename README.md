@@ -1,6 +1,6 @@
 # SPG-120
 
-A python module to controll a spectrometer of SPG-120 series.
+A python module to control a spectrometer of SPG-120 series.
 
 This is based on sigma_koki.py. (https://github.com/akira-okumura/PySigmaKoki/blob/master/sigma_koki.py)
 
