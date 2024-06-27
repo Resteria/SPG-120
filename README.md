@@ -8,5 +8,5 @@ This is based on sigma_koki.py. (https://github.com/akira-okumura/PySigmaKoki/bl
 
 Before importing this, you must do the following 2 things.
 
-* Setting a memory switch according to a manual.　(At this time, Windows will be required.)
+* Setting a memory switch according to a manual.　(Windows will be required.)
 * Importing sigma_koki.py.
