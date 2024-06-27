@@ -97,8 +97,9 @@ class ShimadzuSpectrometer():
                 else:
                     next_filter = 6
         
-        N_filter = abs(self.__current_filter__ - next_filter)
-        N_pulse = N_filter * 167
+        current_pulse = math.ceil((self.__current_filter__-1) * 500 / 3)
+        next_pulse = math.ceil((next_filter-1) * 500 / 3)
+        N_pulse = abs(current_pulse - next_pulse)
         
         if next_filter >= self.__current_filter__:
             command += '+P%d' % N_pulse
@@ -137,6 +138,6 @@ class ShimadzuSpectrometer():
 
         theta_of_grating = current_pulse_of_grating * (-1) * 0.0018
         current_wavelength = round(math.sin(theta_of_grating/180*math.pi) / (-0.0006194615) / (1+self.__C2__))
-        current_filter = round(current_pulse_of_filter / 500 * 3)
+        current_filter = round(current_pulse_of_filter / 500 * 3) + 1
 
         return self.__controller__.getStatus(), f'wavelength={current_wavelength}nm,filter=No.{current_filter}'
